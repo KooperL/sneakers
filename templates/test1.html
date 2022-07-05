@@ -4,20 +4,22 @@
 
 {% block body %}
 <style>
-#fuel_img1: {width: 100px;}
+table, th, td {
+  border: 1px solid;
+}
 </style>
 <div id='fuel_images' class='dual-column'>
 <div id='fuel_img1'>
-<img style="width: 300px;" src='{{ url_for('static', filename='images/test1.jpg') }}'>
+<img style="width: 30%;" src='{{ url_for('static', filename='images/test1.jpg') }}'>
 </div>
 </div>
 
 <div id=fuel_wrapper' class='dual-column'>
 <span style='font-family:consolas'>
 <div id='fuel_stats'>
-<table id='fuel_stats' width=90%>
+<table id='fuel_stats' style="text-align: center; border: 1px solid;" width=50%>
 <tr>
-<th>Product ID: </th>
+<th>Product: </th>
 <th>Lowest price: </th>
 <th>Average: </th>
 </tr>

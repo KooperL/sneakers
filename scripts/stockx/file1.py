@@ -1,9 +1,12 @@
 #from stockxsdk import Stockx
 
 def fakeCall(pid):
+  pidLookup = {
+    'test1': 'shitty vans',
+  }
   lowest_price = 100
   average = 200
-  return [pid, lowest_price, average]
+  return [pidLookup[pid], lowest_price, average]
 
 
 def main(pid):
@@ -11,4 +14,4 @@ def main(pid):
   return getPriceFromPID
 
 if __name__ == '__main__':
-  main('BB1234')
+  main('')

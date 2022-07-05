@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response, session, jsonify
-from stockx import file1
+import scripts.stockx.file1 
 
 app = Flask(__name__)
 
@@ -13,10 +13,10 @@ def homeHome():
 
 @app.route('/test1/', methods=['GET', 'POST'])
 def stocksHome():
-  sneakersApi = file1.main('BB1234')
+  sneakersApi = scripts.stockx.file1.main('test1')
   kwargs = {
-   'title':'Stock page',
-   'heading':'Stock page',
+   'title':'Template page',
+   'heading':'Template page',
    'apiCall': sneakersApi
   }
   return render_template('test1.html', **kwargs)
