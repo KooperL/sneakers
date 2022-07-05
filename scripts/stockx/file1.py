@@ -1,17 +1,26 @@
-#from stockxsdk import Stockx
-
 def fakeCall(pid):
   pidLookup = {
-    'test1': 'shitty vans',
+    '0001': {
+      'name': 'Vans',
+      'condition': 'Brand new',
+      'lowestOffer': '200',
+      'averageOffer': '450'
+    },
+    '0002': {
+      'name': 'Air force 1\'s',
+      'condition': 'Mild',
+      'lowestOffer': '15',
+      'averageOffer': '23'
+    },
   }
-  lowest_price = 100
-  average = 200
-  return [pidLookup[pid], lowest_price, average]
+  return pidLookup[pid]
 
 
 def main(pid):
   getPriceFromPID = fakeCall(pid)
+  # This is where you'd normally call an API 
+  print(getPriceFromPID)
   return getPriceFromPID
 
 if __name__ == '__main__':
-  main('')
+  main('0001')

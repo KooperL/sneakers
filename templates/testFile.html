@@ -10,7 +10,8 @@ table, th, td {
 </style>
 <div id='fuel_images' class='dual-column'>
 <div id='fuel_img1'>
-<img style="width: 30%;" src='{{ url_for('static', filename='images/test1.jpg') }}'>
+<!--<img style="width: 30%;" src='{ { url_for('static', filename=images/.jpg) } }'>-->
+    <img style="width: 30%;" src='static/images/{{ pid }}.jpg'>
 </div>
 </div>
 
@@ -19,14 +20,14 @@ table, th, td {
 <div id='fuel_stats'>
 <table id='fuel_stats' style="text-align: center; border: 1px solid;" width=50%>
 <tr>
-<th>Product: </th>
-<th>Lowest price: </th>
-<th>Average: </th>
+<th>Condition: </th>
+<th>Lowest Offer: </th>
+<th>Average Offer: </th>
 </tr>
 <tr>
-<td>{{ apiCall[0] }}</td>
-<td>{{ apiCall[1] }}</td>
-<td>{{ apiCall[2] }}</td>
+<td>{{ apiCall['condition'] }}</td>
+<td>{{ apiCall['lowestOffer'] }}</td>
+<td>{{ apiCall['averageOffer'] }}</td>
 </tr>
 </table>
 </div>

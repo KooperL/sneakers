@@ -5,21 +5,25 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return redirect('/home/')
+  return redirect('/home')
 
-@app.route('/home/')
+
+@app.route('/home')
 def homeHome():
   return render_template('index.html')
 
-@app.route('/test1/', methods=['GET', 'POST'])
+@app.route('/test', methods=['GET'])
 def stocksHome():
-  sneakersApi = scripts.stockx.file1.main('test1')
+  product_id = request.args.get('pid')
+  print(product_id)
+  sneakersApi = scripts.stockx.file1.main(product_id)
   kwargs = {
-   'title':'Template page',
-   'heading':'Template page',
+   'title': f'{sneakersApi["name"]} preview',
+   'heading': sneakersApi['name'],
+   'pid': product_id,
    'apiCall': sneakersApi
   }
-  return render_template('test1.html', **kwargs)
+  return render_template('testFile.html', **kwargs)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=80, debug=True)
