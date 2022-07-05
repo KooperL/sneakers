@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response, session, jsonify
 import scripts.stockx.file1 
+import scripts.stockx.file2 
 
 app = Flask(__name__)
 
@@ -10,7 +11,9 @@ def index():
 
 @app.route('/home')
 def homeHome():
-  return render_template('index.html')
+  sneakersApi = scripts.stockx.file2.main()
+  return render_template('index.html', productsArray=sneakersApi)
+
 
 @app.route('/test', methods=['GET'])
 def stocksHome():

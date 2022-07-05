@@ -25,30 +25,19 @@
     <div id='menu'>
     <h2>Shoes:</h2>
     <div id='menu1' style="display: flex; flex-direction: row;">
+      {% for shoe in productsArray %}
         <div style="padding: 10px; display: flex; flex-direction: column;">
-          <a href='/test?pid=0001'>
+          <a href='/test?pid={{shoe['pid']}}'>
             <div>
-              <img style="width: 100px; height:100px;" src='{{ url_for('static', filename='images/0001.jpg') }}'>
+                <img style="width: 100px; height:100px;" src='{{ shoe["imageLocation"] }}'>
             </div>
             <div>
-              <a>test1</a>
+              <a>{{ shoe['name'] }}</a>
             </div>
           </a>
         </div>
+        {% endfor %}
 
-        <div style="padding: 10px; display: flex; flex-direction: column;">
-          <a href='/test?pid=0002'>
-            <div>
-              <img style="width: 100px; height:100px;" src='{{ url_for('static', filename='images/0002.jpg') }}'>
-            </div>
-            <div>
-              <a>test2</a>
-            </div>
-          </a>
-        </div>
     </div>
   </body>
 </html>
-
-
-

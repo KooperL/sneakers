@@ -19,7 +19,6 @@ def fakeCall(pid):
 def main(pid):
   getPriceFromPID = fakeCall(pid)
   # This is where you'd normally call an API 
-  print(getPriceFromPID)
   return getPriceFromPID
 
 if __name__ == '__main__':
